@@ -25,3 +25,4 @@ console.log(style.display);
 
 console.log(document.documentElement.scrollTop);
 
+// document.documentElement.scrollTop = 0; поднятие на начало страницы
