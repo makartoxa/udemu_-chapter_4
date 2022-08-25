@@ -1,39 +1,24 @@
-const btn = document.querySelector('.btn');
-let timerId,
-    i = 0;
+'use strict';
 
-function myAnimation() {
-    const elem = document.querySelector('.box');
-    let pos = 0;
+const box = document.querySelector('.box'),
+    btn = document.querySelector('button');
 
-    const id = setInterval(frame, 10);
-    function frame() {
-        if (pos == 300) {
-            clearInterval(id);
-        } else {
-            pos++;
-            elem.style.top = pos + 'px';
-            elem.style.left = pos + 'px';
-        }
-    }
-}
-btn.addEventListener('click', myAnimation);
+// const widht = box.clientWidth;
+// const height = box.clientHeight;
+// const widht = box.offsetWight;
+// const height = box.offsetHeight;
+const wight = box.scrollWidth;
+const height = box.scrollHeight;
 
-// btn.addEventListener('click', () => {
-//     // const timerId = setTimeout(logger, 2000);
-//     timerId = setInterval(logger, 500);
-// })
-//
-//
-// function logger () {
-//     if (i === 3) {
-//         clearInterval(timerId);
-//     }
-//     console.log('Text');
-//     i++;
-// }
+console.log(wight, height);
 
-// let id = setTimeout(function log() {
-//     console.log('Hello');
-//     id = setTimeout(log, 500);
-// }, 500);
+btn.addEventListener('click', () => {
+    box.style.height = box.scrollHeight + 'px';
+    console.log(box.scrollTop);
+});
+
+console.log(box.getBoundingClientRect().top);
+
+const style = window.getComputedStyle(box);
+
+console.log(style.display)
