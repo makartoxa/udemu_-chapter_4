@@ -1,5 +1,6 @@
 'use strict';
 
+<<<<<<< HEAD
 const box = document.querySelector('.box'),
     btn = document.querySelector('button');
 
@@ -26,3 +27,25 @@ console.log(style.display);
 console.log(document.documentElement.scrollTop);
 
 // document.documentElement.scrollTop = 0; поднятие на начало страницы
+=======
+function User (name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.hello = function () {
+        console.log(`Hello ${this.name}`);
+    }
+}
+User.prototype.exit = function (name) {
+    console.log(`Пользователь ${this.name} ушел`)
+}
+
+const ivan = new User ('Ivan', 28);
+const alex = new User('Alex', 20);
+
+ivan.exit();
+alex.exit();
+
+console.log(ivan);
+console.log(alex);
+>>>>>>> 54fabc0 (add function constructor)
